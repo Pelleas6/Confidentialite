@@ -1,1 +1,1 @@
-# rivage-confidentialite
+# confidentialite
