@@ -7,6 +7,7 @@ Site : https://pelleas6.github.io/Confidentialite/
 | Application | Dossier | Confidentialité publique |
 |---|---|---|
 | Rivage | `rivage/` | https://pelleas6.github.io/Confidentialite/rivage/ |
+| Anatomias — Atlas & Quiz | `anatomias/` | https://pelleas6.github.io/Confidentialite/anatomias/ |
 | Sillage | `sillage/` | https://pelleas6.github.io/Confidentialite/sillage/ |
 
 Démonstration GPS Sillage : https://pelleas6.github.io/Confidentialite/sillage/demonstration.html

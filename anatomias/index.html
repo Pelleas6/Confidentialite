@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#091820">
+<meta name="description" content="Politique de confidentialité d’Anatomias — Atlas & Quiz : données locales, sauvegarde Android, partage et suppression.">
+<meta name="color-scheme" content="dark">
+<title>Anatomias — Politique de confidentialité</title>
+<link rel="canonical" href="https://pelleas6.github.io/Confidentialite/anatomias/">
+<style>
+:root{--bg:#091820;--panel:#10262d;--ink:#edf5ef;--muted:#aabdbd;--mint:#99deca;--line:#294047;--gold:#cfba8c}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--mint);text-underline-offset:4px}a:hover{color:#fff}a:focus-visible{outline:3px solid var(--mint);outline-offset:6px;border-radius:3px}.skip{position:absolute;top:-100px;left:20px;z-index:5;padding:10px 20px;background:var(--mint);color:var(--bg)}.skip:focus{top:12px}
+.wrap{max-width:1120px;margin:auto;padding-inline:44px}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:29px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:13px;font-size:25px;font-weight:650;letter-spacing:-1px}.brand svg{width:36px;height:43px;color:var(--mint)}.brand small{display:block;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;line-height:1.4;font-weight:500;color:var(--muted)}
+.header-label{font-size:12px;color:var(--muted);letter-spacing:.08em}
+.hero{padding:64px 0 42px;position:relative}.eyebrow{display:flex;align-items:center;gap:9px;margin:0 0 20px;color:var(--mint);font-size:11px;font-weight:650;letter-spacing:2px;text-transform:uppercase}.eyebrow::before{content:"";width:23px;height:1px;background:var(--mint)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,6vw,72px);line-height:1.05;font-weight:400;letter-spacing:-2.2px;margin:0;max-width:800px}
+h1 span{color:var(--mint)}.intro{max-width:570px;margin:23px 0 24px;color:var(--muted);font-size:17px;line-height:1.65}.meta{font-size:12px;color:var(--muted)}
+.commitments{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:54px;background:linear-gradient(120deg,#16332f,var(--panel))}
+.commitment{display:flex;align-items:center;gap:13px;padding:22px 25px}.commitment+.commitment{border-left:1px solid var(--line)}.commitment svg{width:23px;height:23px;flex-shrink:0;color:var(--mint)}.commitment b{font-size:14px;font-weight:550}
+.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:65px;align-items:start}
+nav{position:sticky;top:28px;padding-top:6px}.nav-title{font-size:10px;font-weight:600;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin:0 0 18px}
+nav a{display:flex;gap:13px;padding:9px 0;color:var(--muted);font-size:13px;text-decoration:none}nav a span{font-size:11px;color:#789596;font-variant-numeric:tabular-nums}nav a:hover{color:var(--mint)}
+article{min-width:0}section{padding:0 0 31px;margin:0 0 33px;border-bottom:1px solid var(--line);scroll-margin-top:25px}
+.section-title{display:flex;gap:16px;align-items:baseline;margin-bottom:14px}.number{color:var(--gold);font-size:12px;font-variant-numeric:tabular-nums}.section-title h2{margin:0;font-size:22px;line-height:1.4;font-weight:550;letter-spacing:-.45px}
+p{margin:0 0 13px}section p{color:#c4d2d0;font-size:15px}section p:last-child{margin-bottom:0}strong{color:var(--ink);font-weight:600}
+.note{background:#10292b;border-left:2px solid var(--mint);padding:15px 19px;margin-top:19px;border-radius:0 9px 9px 0}.note p{font-size:14px}
+.actions{display:grid;gap:14px;margin-top:18px}.action{padding:17px 20px;background:var(--panel);border:1px solid var(--line);border-radius:12px}.action h3{font-size:14px;margin:0 0 5px;color:var(--mint);font-weight:600}.action p{font-size:14px}
+.contact{padding:26px 28px;border:1px solid #39564f;background:linear-gradient(115deg,#193b34,#122a30);border-radius:18px;margin:0 0 36px}.contact h2{font-size:22px;margin:0 0 8px;font-weight:500}.contact p{color:#c4d2d0;font-size:14px}.contact a{display:inline-flex;gap:18px;align-items:center;font-size:clamp(15px,2.5vw,20px);font-weight:550;overflow-wrap:anywhere}.contact svg{width:20px;height:20px;flex-shrink:0}
+footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-block:23px 34px;margin-top:20px;font-size:12px;color:var(--muted)}footer a{color:var(--muted);text-decoration:none}
+@media(max-width:780px){.wrap{padding-inline:24px}.header-label{display:none}.hero{padding-top:42px}.commitments{margin-bottom:35px}.commitment{padding:18px 12px;gap:8px;flex-direction:column;align-items:flex-start}.commitment b{font-size:12px}.layout{grid-template-columns:1fr;gap:32px}nav{position:static;border-bottom:1px solid var(--line);padding-bottom:20px}.nav-links{display:grid;grid-template-columns:1fr 1fr;column-gap:16px}.nav-title{margin-bottom:10px}nav a{padding:7px 0;font-size:12px}.section-title h2{font-size:21px}section{padding-bottom:25px;margin-bottom:27px}}
+@media(max-width:380px){.wrap{padding-inline:18px}h1{font-size:40px;letter-spacing:-1.7px}.commitment{padding-inline:9px}.contact{padding:22px 18px}.brand{font-size:23px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff;color:#14252a}.wrap{max-width:none;padding:0}header{padding:0 0 15px}.hero{padding:24px 0}.hero h1{font-size:38px}h1 span,a,.eyebrow,.number{color:#185f4b}.layout{display:block}nav,.commitments,.skip,.header-label,footer{display:none}section{break-inside:avoid}section p,.intro,.meta,.contact p{color:#253b40}strong{color:#14252a}.note,.action,.contact{background:#f5f8f6;border-color:#a9bdb5}.brand small{color:#4e6567}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="wrap">
+<header>
+<div class="brand"><svg viewBox="0 0 36 43" fill="none" aria-hidden="true"><path d="M18 2 33 10v20L18 41 3 30V10Z" stroke="currentColor" stroke-width="1.2"/><path d="M18 8v26M11 14l14 15M25 14 11 29M10 20h16" stroke="currentColor" stroke-width="1.1" opacity=".65"/><circle cx="18" cy="20" r="4" fill="#99deca"/></svg><div>anatomias<small>Atlas &amp; Quiz</small></div></div>
+<span class="header-label">VOS DONNÉES, EN TOUTE CLARTÉ</span>
+</header>
+<main id="contenu">
+<div class="hero">
+<p class="eyebrow">Anatomias — Atlas &amp; Quiz</p>
+<h1>Politique de<br><span>confidentialité.</span></h1>
+<p class="intro">Ce qui est enregistré, ce qui peut être partagé et comment supprimer vos données.</p>
+<p class="meta">Mise à jour le <time datetime="2026-11-10">10 novembre 2026</time></p>
+</div>
+<div class="commitments" aria-label="Fonctionnement de l’application">
+<div class="commitment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg><b>Apprentissage hors ligne</b></div>
+<div class="commitment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-3a8 8 0 0 1 16 0v3M3 3l18 18"/></svg><b>Sans compte utilisateur</b></div>
+<div class="commitment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Z"/><path d="m8 12 3 3 5-6"/></svg><b>Sans publicité ni traceur intégré</b></div>
+</div>
+<div class="layout">
+<nav aria-label="Sommaire de la politique"><p class="nav-title">Dans cette page</p><div class="nav-links">
+<a href="#donnees"><span>01</span> Données sur le téléphone</a>
+<a href="#sauvegarde"><span>02</span> Sauvegarde Android</a>
+<a href="#notifications"><span>03</span> Notifications</a>
+<a href="#partage"><span>04</span> Partage et services externes</a>
+<a href="#suppression"><span>05</span> Conservation et suppression</a>
+<a href="#droits"><span>06</span> Vos droits</a>
+<a href="#site"><span>07</span> Cette page web</a>
+</div></nav>
+<article aria-label="Politique de confidentialité d’Anatomias">
+<section id="donnees"><div class="section-title"><span class="number">01</span><h2>Données sur le téléphone</h2></div>
+<p><strong>Anatomias — Atlas &amp; Quiz fonctionne hors ligne, sans compte.</strong> Vos préférences, fiches consultées, repères, parcours et résultats de quiz sont enregistrés dans l’espace de l’application pour conserver votre progression.</p>
+<p>L’application ne transmet pas ces données à l’éditeur. Elle n’intègre ni publicité, ni outil de suivi publicitaire ou d’analyse d’audience. Elle ne demande pas l’accès à votre localisation, vos contacts, votre caméra, vos photos ou votre microphone.</p>
+</section>
+<section id="sauvegarde"><div class="section-title"><span class="number">02</span><h2>Sauvegarde Android</h2></div>
+<p>Si la sauvegarde du téléphone est activée, Android peut copier votre progression et certaines préférences dans le service de sauvegarde choisi, ou les transférer vers un autre appareil. Une restauration peut avoir lieu après une réinstallation.</p>
+<p>Cette opération dépend des réglages et des services du téléphone. <strong>L’éditeur ne reçoit pas cette sauvegarde.</strong> Les préférences de notification et l’identifiant de partage sont exclus de la sauvegarde configurée par l’application.</p>
+</section>
+<section id="notifications"><div class="section-title"><span class="number">03</span><h2>Notifications</h2></div>
+<p>Avec votre autorisation, des rappels sont programmés sur le téléphone pour reprendre une fiche ou revenir après une période d’inactivité. La dernière activité, la fiche concernée et vos choix restent enregistrés localement.</p>
+<p>Vous pouvez désactiver chaque rappel dans les réglages d’Anatomias, ou toutes les notifications dans les paramètres Android.</p>
+</section>
+<section id="partage"><div class="section-title"><span class="number">04</span><h2>Partage et services externes</h2></div>
+<p><strong>Partager l’application :</strong> l’application de messagerie ou le réseau social que vous choisissez reçoit le texte et le lien partagés. Ce lien contient un identifiant aléatoire propre à l’installation, sans nom ni adresse e-mail. L’éditeur n’exploite aucun serveur de suivi des parrainages.</p>
+<p><strong>Noter ou acheter l’application :</strong> Google Play traite les avis, les achats et les informations nécessaires à son service selon ses propres règles. Anatomias n’accède pas à vos coordonnées bancaires.</p>
+<p><strong>Contacter l’assistance ou suggérer un intitulé :</strong> votre messagerie s’ouvre et vous choisissez d’envoyer le message. L’éditeur reçoit alors votre adresse, son contenu et les éventuelles pièces jointes, uniquement pour traiter votre demande. N’y joignez pas de données médicales. La messagerie d’assistance utilise Gmail.</p>
+<p>Les services externes appliquent leurs politiques, notamment la <a href="https://policies.google.com/privacy?hl=fr">politique de confidentialité de Google</a>. Ils peuvent traiter des données hors de votre pays.</p>
+</section>
+<section id="suppression"><div class="section-title"><span class="number">05</span><h2>Conservation et suppression</h2></div>
+<p>Les données locales restent dans l’espace privé de l’application jusqu’à leur suppression. Les informations d’apprentissage servent à fournir les fonctionnalités demandées ; les courriels d’assistance sont traités sur la base de l’intérêt légitime à répondre à vos demandes.</p>
+<div class="actions">
+<div class="action"><h3>Effacer les données du téléphone</h3><p>Dans les paramètres Android : Applications → Anatomias → Stockage → Effacer les données. La désinstallation supprime également la copie locale.</p></div>
+<div class="action"><h3>Gérer une copie de sauvegarde</h3><p>Utilisez les réglages de sauvegarde du téléphone ou du compte associé. Une copie conservée par Android peut réapparaître lors d’une restauration, même après désinstallation.</p></div>
+<div class="action"><h3>Supprimer un échange d’assistance</h3><p>Écrivez à l’adresse ci-dessous. Les messages sont conservés le temps nécessaire au traitement de la demande ; une conservation supplémentaire peut être nécessaire pour une obligation légale ou un litige.</p></div>
+</div>
+</section>
+<section id="droits"><div class="section-title"><span class="number">06</span><h2>Vos droits</h2></div>
+<p>Pour les informations reçues par l’éditeur, vous pouvez demander l’accès, la rectification, l’effacement ou, selon les conditions applicables, la limitation, l’opposition et la portabilité. Contactez l’éditeur à l’adresse ci-dessous. Vous pouvez aussi adresser une réclamation à la <a href="https://www.cnil.fr/fr/adresser-une-plainte">CNIL</a>.</p>
+<p>L’éditeur n’a pas d’accès à distance aux données enregistrées uniquement sur votre téléphone.</p>
+</section>
+<section id="site"><div class="section-title"><span class="number">07</span><h2>Cette page web</h2></div>
+<p>Cette page est hébergée par GitHub Pages. Elle ne contient ni formulaire, ni publicité, ni outil de mesure d’audience, et ne dépose pas de cookie applicatif. GitHub peut traiter des informations techniques de connexion, notamment l’adresse IP, pour fournir et sécuriser l’hébergement, selon sa <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement">politique de confidentialité</a>.</p>
+<p>Cette politique sera actualisée si les pratiques de l’application évoluent. La date ci-dessus indique sa dernière mise à jour.</p>
+</section>
+<div class="contact" id="contact"><h2>Une question sur vos données ?</h2><p>Contact de l’éditeur d’Anatomias et demandes relatives à la confidentialité :</p><a href="mailto:ovnis.app@gmail.com">ovnis.app@gmail.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+</article>
+</div>
+</main>
+<footer><span>Anatomias — Atlas &amp; Quiz</span><a href="#contenu">Haut de page ↑</a></footer>
+</div>
+</body>
+</html>
