@@ -1,4 +1,4 @@
-name: Vérifier la politique de Rétro Emulator publiée
+name: Vérifier la politique de Game OverTime publiée
 on:
   push:
     branches: [main]

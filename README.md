@@ -9,7 +9,7 @@ Site : https://pelleas6.github.io/Confidentialite/
 | Rivage | `rivage/` | https://pelleas6.github.io/Confidentialite/rivage/ |
 | Anatomias — Atlas & Quiz | `anatomias/` | https://pelleas6.github.io/Confidentialite/anatomias/ |
 | Sillage | `sillage/` | https://pelleas6.github.io/Confidentialite/sillage/ |
-| Rétro Emulator | `retro-emulator/` | https://pelleas6.github.io/Confidentialite/retro-emulator/ |
+| Game OverTime | `retro-emulator/` | https://pelleas6.github.io/Confidentialite/retro-emulator/ |
 
 Démonstration GPS Sillage : https://pelleas6.github.io/Confidentialite/sillage/demonstration.html
 
