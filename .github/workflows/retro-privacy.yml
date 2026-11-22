@@ -1,0 +1,58 @@
+name: Vérifier la politique de Rétro Emulator publiée
+on:
+  push:
+    branches: [main]
+    paths: ['retro-emulator/**', '.github/workflows/retro-privacy.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python -m pip install playwright
+      - name: Vérifier les dix langues sur le site public
+        env:
+          SITE: https://pelleas6.github.io/Confidentialite/
+        run: |
+          python - <<'PY'
+          import os, time, shutil
+          from pathlib import Path
+          from urllib.request import urlopen
+          from playwright.sync_api import sync_playwright
+          root = os.environ['SITE']
+          url = root + 'retro-emulator/'
+          for attempt in range(45):
+              try:
+                  with urlopen(url + '?v=' + os.environ['GITHUB_SHA'], timeout=10) as response:
+                      if response.read() == Path('retro-emulator/index.html').read_bytes(): break
+              except OSError: pass
+              time.sleep(6)
+          else: raise RuntimeError('Publication de la version attendue introuvable')
+          with sync_playwright() as pw:
+              browser = pw.chromium.launch(executable_path=shutil.which('google-chrome'), args=['--no-sandbox'])
+              page = browser.new_page()
+              for width in [320, 390, 1080]:
+                  page.set_viewport_size({'width':width,'height':850})
+                  page.goto(root)
+                  page.locator('a[href="./retro-emulator/"]').click()
+                  for lang in ['de','en','es','it','pt','nl','pl','ro','ru','fr']:
+                      page.locator('summary').click()
+                      page.locator(f'.languages a[lang="{lang}"]').click()
+                      assert page.locator('html').get_attribute('lang') == lang
+                      assert page.locator('.content section').count() == 6
+                      assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (width,lang)
+                      assert page.locator('.art img').evaluate_all('(a)=>a.every(i=>i.complete && i.naturalWidth>0)')
+                      assert page.locator('.index a').evaluate_all('(a)=>a.every(x=>document.querySelector(x.hash))')
+                      assert page.locator('a[href="mailto:ovnis.app@gmail.com"]').count()==1
+                  page.screenshot(path=f'apercu-{width}.png')
+              browser.close()
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apercus-confidentialite
+          path: apercu-*.png
