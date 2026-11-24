@@ -44,7 +44,8 @@ jobs:
                       page.locator('summary').click()
                       page.locator(f'.languages a[lang="{lang}"]').click()
                       assert page.locator('html').get_attribute('lang') == lang
-                      assert page.locator('.content section').count() == 6
+                      assert page.locator('.content section').count() == 7
+                      assert 'Google Play' in page.locator('#features').inner_text()
                       assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (width,lang)
                       assert page.locator('.art img').evaluate_all('(a)=>a.every(i=>i.complete && i.naturalWidth>0)')
                       assert page.locator('.index a').evaluate_all('(a)=>a.every(x=>document.querySelector(x.hash))')
