@@ -38,15 +38,15 @@
     <h2>Crédits visuels</h2>
     <p>Photographies des consoles par Evan-Amos. La photographie de la Super Nintendo, redimensionnée et convertie en WebP, est sous <a href="notices/cc-by-sa.txt">CC BY-SA 3.0</a>. Les cinq autres sont dans le domaine public.</p>
     <p>Icônes Google Material sous <a href="notices/apache.txt">Apache 2.0</a> et police Exo 2 sous <a href="notices/exo2.txt">SIL OFL 1.1</a>. <a href="notices/visuels.txt">Attributions et références des visuels</a>.</p>
-    <h2>Une console, une façon de jouer</h2>
-    <p>Il y avait les parties qu’on préparait en tirant une chaise devant la télévision et celles qu’on lançait pour occuper un trajet en voiture. Sur la NES ou la Super NES, il suffisait de passer la manette pour que le suivant tente sa chance. Avec le Game Boy, on passait la console entière, parfois juste pour montrer comment franchir un passage avant de la récupérer aussitôt.</p>
-    <p>Ces habitudes ont aussi laissé leur trace dans la disposition des commandes. Sur Game Boy Advance, les mains se placent de chaque côté d’un écran large. Sur Nintendo DS, le regard passe d’un écran à l’autre. Quand on revient à un jeu après des années, on a parfois oublié le nom du niveau alors que le pouce retrouve encore le bon bouton.</p>
-    <h2>Les boîtes que l’on reconnaît de loin</h2>
-    <p>Dans une collection, les titres ne sont pas toujours ce que l’on retient en premier. On se rappelle une couleur, un personnage dessiné dans un coin, une boîte vue dans la vitrine d’un magasin. Deux éditions du même jeu peuvent évoquer des souvenirs différents simplement parce que l’illustration change d’un pays à l’autre.</p>
-    <p>Dans la bibliothèque de Game OverTime, les jaquettes servent de repères pour retrouver ses propres jeux. Les huit jaquettes fictives de la présentation jouent un autre rôle. Elles illustrent les écrans de l’application, comme les boîtes d’une petite collection imaginaire. Le film d’ouverture et la cartouche OVNI ont également été créés pour Game OverTime.</p>
-    <h2>Les détails du quotidien</h2>
-    <p>Une roue dentée pour retrouver les réglages, une loupe pour chercher une jaquette, une flèche pour revenir à la bibliothèque. Ces petits dessins accompagnent des gestes si familiers qu’on finit par les utiliser sans les regarder. Les icônes Material figurent dans les crédits à ce titre, aux côtés de la police Exo 2 et des photographies de consoles.</p>
-    <p>Et puis il y a les détails qui appartiennent à chaque joueur. L’un range sa collection par console, l’autre retrouve d’abord la couverture qu’il connaissait enfant. La même cartouche rappelle à l’un un mercredi après-midi et à l’autre ce fameux passage que personne à la maison n’arrivait à terminer.</p>
+    <h2>Interface entre le lecteur et les moteurs</h2>
+    <p>Chaque moteur est fourni sous forme de bibliothèque native Android. Le lecteur communique avec lui par l’interface libretro. Au démarrage d’une session, le lecteur indique au moteur quelles fonctions appeler pour transmettre une image, envoyer des échantillons audio et consulter l’état des commandes.</p>
+    <p>La version du lecteur et la révision d’un moteur sont deux références distinctes. Le numéro de version identifie une distribution de Game OverTime. Pour chaque moteur intégré, un identifiant de commit désigne la révision précise du projet d’origine. Les notices des moteurs reprennent ces références pour permettre de rattacher les composants à la version distribuée.</p>
+    <h2>Formats de pixels et surface Android</h2>
+    <p>Lorsqu’un moteur transmet une image, il fournit sa largeur, sa hauteur et le nombre d’octets qui séparent le début de deux lignes successives. Cette dernière valeur tient compte d’éventuels octets d’alignement. Le lecteur l’utilise pour retrouver le premier pixel de chaque ligne dans la mémoire fournie par le moteur.</p>
+    <p>Le codage des couleurs dépend du moteur. En RGB565, un pixel occupe 16 bits, dont cinq pour le rouge, six pour le vert et cinq pour le bleu. En XRGB8888, chaque composante de couleur occupe huit bits. Le lecteur convertit les composantes au format RGBA8888 de la surface Android avant de lui remettre l’image.</p>
+    <h2>Lecture de l’état des commandes</h2>
+    <p>Le lecteur représente les boutons de la manette virtuelle par un masque de bits. Chaque bouton possède une position dans ce masque. Une valeur de un à cette position indique que le bouton est enfoncé. Une diagonale ou un saut en mouvement peut ainsi être représenté par plusieurs bits actifs au même instant.</p>
+    <p>Le moteur peut interroger un bouton précis ou demander le masque complet. Dans le premier cas, le lecteur extrait le bit associé à l’identifiant du bouton. Dans le second, il renvoie l’ensemble des états en une seule lecture. Les identifiants utilisés pour ces échanges sont ceux de l’interface libretro.</p>
     <details>
       <summary>Code source des versions distribuées</summary>
       <ul>
