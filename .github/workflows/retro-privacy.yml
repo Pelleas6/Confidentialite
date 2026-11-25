@@ -51,7 +51,9 @@ jobs:
               for width in [320, 390, 1080]:
                   page.set_viewport_size({'width':width,'height':850})
                   page.goto(sources)
-                  assert page.locator('a.download').count() == 3
+                  page.get_by_text("Code source des versions distribuées", exact=True).click()
+                  archives = page.locator('details a[href$=".zip"]')
+                  assert archives.count() == 3 and all(a.is_visible() for a in archives.all())
                   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), width
                   page.goto(root)
                   page.locator('a[href="./retro-emulator/"]').click()
