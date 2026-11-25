@@ -1,0 +1,20 @@
+{
+  "1.7.0": {
+    "sha256": "33ff58be04474cba79c5751e813ae4785b6f26642091d50c695186512cb5808b",
+    "size": 29825248,
+    "remove": [
+      "app/src/androidTest/java/app/cartouche/player/ThemeChecks.java"
+    ]
+  },
+  "1.7.1": {
+    "sha256": "786d5a8492316c7a2f9fdf10e6f8539b6846bd0b6d06312104e17e01fd08bf7d",
+    "size": 29828824,
+    "remove": [
+      "app/src/androidTest/java/app/cartouche/player/ThemeChecks.java"
+    ]
+  },
+  "1.7.2": {
+    "sha256": "c7341b175d7319dab712cb119b28babc24f37bc7f3add80badcc6193178a2869",
+    "size": 29828244
+  }
+}

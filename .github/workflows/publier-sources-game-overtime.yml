@@ -1,0 +1,38 @@
+name: Publier les sources de Game OverTime 1.7
+on:
+  push:
+    branches: [sources/game-overtime-1.7]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 publication/assembler.py
+      - name: Publier les trois archives vérifiées
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: game-overtime-sources-1.7
+        run: |
+          set -eu
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --target "$GITHUB_SHA" --draft --title "Game OverTime · Sources Android 1.7.0 à 1.7.2" --notes "Téléchargez Sources-1.7.x.zip pour obtenir le code du lecteur, les quatre moteurs avec les adaptations Android, leurs licences et les instructions de compilation. SHA256SUMS permet de vérifier les archives."
+          fi
+          if [ "$(gh release view "$TAG" --json isDraft --jq .isDraft)" = true ]; then
+            gh release upload "$TAG" distribution/* --clobber
+            gh release edit "$TAG" --draft=false --latest=false
+          fi
+      - name: Tester les téléchargements sans authentification
+        run: |
+          cd distribution
+          origin="https://github.com/$GITHUB_REPOSITORY/releases/download/game-overtime-sources-1.7"
+          for file in Sources-*.zip SHA256SUMS; do
+            curl --retry 6 --retry-all-errors --retry-delay 4 -fsSL "$origin/$file" -o "$file.public"
+            cmp "$file" "$file.public"
+          done
+          sha256sum -c SHA256SUMS
