@@ -1,0 +1,16 @@
+Photographies des consoles : Evan-Amos, Wikimedia Commons. Game Boy, Game Boy Color, Game Boy Advance, NES et Nintendo DS : domaine public. Super Nintendo SNES-Mod1-Console-Set.png : Evan-Amos, CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0/ — conversion au format WebP et réduction de taille. Source : https://commons.wikimedia.org/wiki/File:SNES-Mod1-Console-Set.png
+
+Présentation : huit jaquettes de jeux fictifs illustrées pour Rétro Emulator. Le visuel « Zéro publicité » est celui de la présentation 1.4.0.
+
+Icône Réglages : Google Material Icons, settings outlined 24 px. Apache License 2.0.
+https://github.com/google/material-design-icons
+https://www.apache.org/licenses/LICENSE-2.0
+
+Icône Actualiser : Google Material Design Icons, navigation/refresh, Apache-2.0. Source : https://github.com/google/material-design-icons/blob/master/src/navigation/refresh/materialicons/24px.svg
+
+Google Material Icons — Apache License 2.0. Icônes officielles non redessinées : close, check, remove, add, screen_rotation, visibility_off, tune, restore, help_outline, delete_outline, more_vert, expand_more, arrow_back, list. Sources : https://github.com/google/material-design-icons/tree/master/src ; fichiers XML ic_*_material avec chemin source individuel.
+
+Recherche de jaquettes : index des six dépôts libretro-thumbnails (instantané du 21 novembre 2026, commits dans assets/covers). Images téléchargées à la demande depuis les dépôts publics et leur miroir thumbnails.libretro.com. Les images de jeux restent la propriété de leurs éditeurs. https://github.com/libretro-thumbnails/libretro-thumbnails
+Icônes image/search : Google Material Design Icons, Apache 2.0, https://github.com/google/material-design-icons
+
+Game OverTime 1.7.0 · L’icône de notification en forme de manette est un dessin vectoriel du projet. Les textes Apache 2.0 et CC BY-SA 3.0 sont consultables dans cet écran. Le film d’ouverture et la cartouche OVNI sont les créations graphiques fournies pour Game OverTime.

@@ -33,11 +33,26 @@ jobs:
               except OSError: pass
               time.sleep(6)
           else: raise RuntimeError('Publication de la version attendue introuvable')
+          sources = url + 'sources/' if url.endswith('/') else root + 'retro-emulator/sources/'
+          expected = Path('retro-emulator/sources/index.html').read_bytes()
+          for _ in range(40):
+              try:
+                  with urlopen(sources + '?v=' + os.environ['GITHUB_SHA'], timeout=10) as response:
+                      if response.read() == expected: break
+              except OSError: pass
+              time.sleep(5)
+          else: raise RuntimeError('Page des sources indisponible')
+          for notice in Path('retro-emulator/sources/notices').glob('*.txt'):
+              with urlopen(sources + 'notices/' + notice.name, timeout=20) as response:
+                  assert response.read() == notice.read_bytes(), notice.name
           with sync_playwright() as pw:
               browser = pw.chromium.launch(executable_path=shutil.which('google-chrome'), args=['--no-sandbox'])
               page = browser.new_page()
               for width in [320, 390, 1080]:
                   page.set_viewport_size({'width':width,'height':850})
+                  page.goto(sources)
+                  assert page.locator('a.download').count() == 3
+                  assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), width
                   page.goto(root)
                   page.locator('a[href="./retro-emulator/"]').click()
                   for lang in ['de','en','es','it','pt','nl','pl','ro','ru','fr']:

@@ -11,6 +11,8 @@ Site : https://pelleas6.github.io/Confidentialite/
 | Sillage | `sillage/` | https://pelleas6.github.io/Confidentialite/sillage/ |
 | Game OverTime | `retro-emulator/` | https://pelleas6.github.io/Confidentialite/retro-emulator/ |
 
+Sources et licences de Game OverTime : https://pelleas6.github.io/Confidentialite/retro-emulator/sources/
+
 Démonstration GPS Sillage : https://pelleas6.github.io/Confidentialite/sillage/demonstration.html
 
 ## Organisation
